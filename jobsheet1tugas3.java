@@ -12,6 +12,7 @@ public class jobsheet1tugas3 {
       input();
       
       while (true){
+        System.out.println();
         System.out.println("=== JADWAL PERKULIAHAN ===");
         System.out.println("1. seluruh jadwal kuliah");
         System.out.println("2. jadwal berdasarkan hari tertentu");
@@ -25,21 +26,27 @@ public class jobsheet1tugas3 {
 
         switch (pilih){
           case 1:
+            System.out.println();
             seluruhJadwal();
             break;
           case 2:
+            System.out.println();
             berdasarkanHari();
             break;
           case 3:
+            System.out.println();
             berdasarkanSemester();
             break;
           case 4:
+            System.out.println();
             cariMataKuliah();
             break;
           case 5:
+            System.out.println();
             System.out.println("=== TERIMA KASIH ===");
             return;
           default:
+            System.out.println();
             System.out.println("=== !!!INPUT TIDAK VALID!!! ===");
         }
 
@@ -48,6 +55,7 @@ public class jobsheet1tugas3 {
   }
 
   public static void input(){
+    System.out.println("=============================");
     System.out.print("Masukkan jumlah mata kuliah: ");
     n = sc.nextInt();
     sc.nextLine();
@@ -75,18 +83,22 @@ public class jobsheet1tugas3 {
   }
 
    public static void seluruhJadwal() {
-        System.out.println("\nSeluruh Jadwal Kuliah:");
+        System.out.println("             >>> Seluruh Jadwal Kuliah <<<                  ");
+        System.out.println("============================================================");
         System.out.printf("%-30s %-5s %-10s %-10s\n", "Nama Mata Kuliah", "SKS", "Semester", "Hari");
-        System.out.println("------------------------------------------------------------");
+        System.out.println("============================================================");
         for (int i = 0; i < n; i++) {
             System.out.printf("%-30s %-5d %-10d %-10s\n", Matkul[i], sks[i], semester[i], hariKuliah[i]);
         }
     }
 
    public static void berdasarkanHari() {
+        System.out.println("==============================================");
         System.out.print("Masukkan hari kuliah yang ingin ditampilkan: ");
         String hariCari = sc.nextLine();
-        System.out.println("\nJadwal Kuliah pada " + hariCari + ":");
+        System.out.println();
+
+        System.out.println("==== Jadwal Kuliah pada " + hariCari + " ====");
         boolean ditemukan = false;
         for (int i = 0; i < n; i++) {
             if (hariKuliah[i].equalsIgnoreCase(hariCari)) {
@@ -100,9 +112,12 @@ public class jobsheet1tugas3 {
     }
 
   public static void berdasarkanSemester() {
+        System.out.println("==========================================");
         System.out.print("Masukkan semester yang ingin ditampilkan: ");
         int semesterCari = sc.nextInt();
-        System.out.println("\nJadwal Kuliah pada Semester " + semesterCari + ":");
+        System.out.println();
+
+        System.out.println("== Jadwal Kuliah pada Semester " + semesterCari + " ==");
         boolean ditemukan = false;
         for (int i = 0; i < n; i++) {
             if (semester[i] == semesterCari) {
@@ -116,8 +131,11 @@ public class jobsheet1tugas3 {
     }
 
   public static void cariMataKuliah() {
+        System.out.println("=============================================");
         System.out.print("Masukkan nama mata kuliah yang ingin dicari: ");
         String mataKuliahCari = sc.nextLine();
+        System.out.println();
+
         boolean ditemukan = false;
         for (int i = 0; i < n; i++) {
             if (Matkul[i].equalsIgnoreCase(mataKuliahCari)) {
