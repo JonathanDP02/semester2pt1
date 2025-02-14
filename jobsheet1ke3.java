@@ -6,7 +6,7 @@ public class jobsheet1ke3 {
 
         System.out.print("Masukkan jumlah mata kuliah: ");
         int jumlahMK = scanner.nextInt();
-        scanner.nextLine(); // Membersihkan buffer
+        scanner.nextLine(); 
 
         String[] mataKuliah = new String[jumlahMK];
         int[] nilaiAngka = new int[jumlahMK];
@@ -28,9 +28,9 @@ public class jobsheet1ke3 {
             
             System.out.print("Masukkan bobot SKS untuk " + mataKuliah[i] + ": ");
             bobotSKS[i] = scanner.nextDouble();
-            scanner.nextLine(); // Membersihkan buffer
+            scanner.nextLine(); 
 
-            // Konversi Nilai
+           
             if (nilaiAngka[i] > 80 && nilaiAngka[i] <= 100) {
                 nilaiHuruf[i] = "A";
                 nilaiSetara[i] = 4.0;
@@ -59,7 +59,7 @@ public class jobsheet1ke3 {
             }
 
             totalBobotNilai += nilaiSetara[i] * bobotSKS[i];
-            totalSKS += bobotSKS[i];  // Menambahkan SKS ke totalSKS
+            totalSKS += bobotSKS[i];  
         }
 
         System.out.println();
@@ -69,7 +69,7 @@ public class jobsheet1ke3 {
             System.out.println("Nilai untuk mata kuliah " + mataKuliah[i] + ": " + nilaiAngka[i] + "\t");
         }
 
-        // Menampilkan hasil
+      
         System.out.println("\n====================================================================================");
         System.out.printf("%-30s %-10s %-10s %-10s\n", "MK", "Nilai Angka", "Nilai Huruf", "Bobot SKS");
         System.out.println("======================================================================================");
@@ -78,7 +78,7 @@ public class jobsheet1ke3 {
         }
         System.out.println("======================================================================================");
 
-        // Perhitungan IP Semester sesuai rumus baru
+        
         double ipSemester = totalBobotNilai / totalSKS;
         System.out.printf("IP Semester: %.2f\n", ipSemester);
     }
